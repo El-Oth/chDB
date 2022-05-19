@@ -1,0 +1,63 @@
+CREATE TABLE CUSTOMER (
+  Customer_id PRIMARY KEY VARCHAR2(20),
+  Customer_Name NOT NULL VARCHAR2(20),
+  Customer_Tel NUMBER
+);
+
+INSERT INTO CUSTOMER VALUES
+(
+C01,
+ALI,
+71321009,
+),
+(
+C02,
+ASMA,
+77345823,
+);
+
+CREATE TABLE PRODUCT (
+  Product_id PRIMARY KEY VARCHAR2(20),
+  Product_Name NOT NULL VARCHAR2(20),
+  Category VARCHAR2(20),
+  Price NUMBER
+);
+
+INSERT INTO PRODUCT VALUES
+(
+P01,
+Samsung Galaxy S20,
+Smartphone,
+3299
+),
+(
+P02,
+ASUS Notebook,
+PC,
+4599,
+);
+
+CREATE TABLE ORDERS (
+  Customer_id FOREIGN KEY VARCHAR2(20),
+  Product_id FOREIGN KEY VARCHAR2(20),
+  OrderDate DATE SYSDATE(),
+  Quantity NUMBER,
+  Total_amount NUMBER
+);
+
+INSERT INTO ORDERS VALUES 
+(
+C01,
+P02,
+NULL,
+2,
+9198
+),
+(
+C02,
+P01,
+28/05/2020,
+1,
+3299
+);
+
